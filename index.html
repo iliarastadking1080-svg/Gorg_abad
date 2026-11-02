@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f8fc">
+<title>GORG_ABAD | GORGAME</title>
+<style>
+:root{--bg:#f7f8fc;--card:#fff;--ink:#171827;--muted:#74778b;--line:#e9eaf2;--accent:#7257e8;--accent2:#a18cff;--soft:#f0edff;--shadow:0 14px 40px #29234b0d}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Tahoma,Arial,sans-serif;line-height:1.8}
+a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}button{cursor:pointer;border:0}
+.wrap{width:min(1120px,92%);margin:auto}.top{position:sticky;top:0;z-index:5;background:#ffffffdf;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font-weight:900;letter-spacing:.5px;font-size:21px}.brand span{color:var(--accent)}
+.links{display:flex;gap:22px;color:var(--muted);font-size:14px}.links a:hover{color:var(--accent)}
+.btn{padding:11px 17px;border-radius:13px;background:var(--accent);color:#fff;font-weight:700;box-shadow:0 8px 18px #7257e833}.btn.alt{background:var(--soft);color:var(--accent);box-shadow:none}
+.hero{padding:58px 0 34px}.hero-box{border-radius:28px;padding:clamp(26px,5vw,58px);background:linear-gradient(120deg,#fff 0%,#f0edff 58%,#e8f5ff 100%);border:1px solid #ebe8fa;display:grid;grid-template-columns:1.3fr .7fr;align-items:center;gap:28px;overflow:hidden}
+.kicker{display:inline-flex;background:#fff;color:var(--accent);padding:6px 12px;border-radius:30px;font-size:12px;font-weight:bold;border:1px solid #e7e0ff}
+h1{font-size:clamp(34px,6vw,60px);line-height:1.2;margin:17px 0 12px;letter-spacing:-1px}h1 span{color:var(--accent)}
+.lead{color:var(--muted);max-width:570px}.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.orb{width:min(240px,70%);aspect-ratio:1;border-radius:50%;margin:auto;background:radial-gradient(circle at 35% 30%,#fff 0 8%,#c8baff 9% 25%,#8d72f0 50%,#6549d5 75%);box-shadow:0 25px 70px #7257e84a;display:grid;place-items:center;color:white;font-size:54px;font-weight:900;border:12px solid #ffffff80}
+section{padding:28px 0 42px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:18px}h2{font-size:25px;margin:0}.sub{color:var(--muted);font-size:13px;margin:4px 0 0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:var(--shadow)}
+.news-tag{display:inline-block;background:var(--soft);color:var(--accent);font-size:11px;padding:4px 9px;border-radius:20px;font-weight:bold}
+.card h3{margin:12px 0 6px;font-size:17px}.card p{margin:0;color:var(--muted);font-size:13px}
+.profile{display:grid;grid-template-columns:110px 1fr;gap:20px;align-items:center}.avatar{width:100px;height:100px;border-radius:28px;background:linear-gradient(140deg,#8c75ed,#c9bdff);display:grid;place-items:center;color:white;font-size:32px;font-weight:900}
+.socials{display:flex;gap:9px;flex-wrap:wrap;margin-top:13px}.socials a{background:#f5f4fa;border:1px solid var(--line);padding:7px 12px;border-radius:10px;font-size:12px}
+.chat-layout{display:grid;grid-template-columns:1fr 1fr;gap:16px}.chat-card{padding:0;overflow:hidden}.chat-title{padding:17px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.chat-title h3{margin:0;font-size:16px}.chat-body{height:260px;overflow:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:#fcfcff}.msg{max-width:88%;background:#fff;border:1px solid var(--line);border-radius:14px 14px 4px 14px;padding:9px 12px;font-size:13px;align-self:flex-start;overflow-wrap:anywhere}.msg small{display:block;color:var(--muted);font-size:10px;margin-bottom:3px}.msg.mine{align-self:flex-end;background:var(--soft);border-color:#e4ddff;border-radius:14px 14px 14px 4px}
+.chat-compose{padding:13px;display:flex;gap:8px;border-top:1px solid var(--line)}.chat-compose input{min-width:0;flex:1;border:1px solid var(--line);border-radius:12px;padding:10px 12px;outline:none}.chat-compose input:focus{border-color:var(--accent)}
+.notice{font-size:11px;color:var(--muted);padding:0 16px 13px}.safety{background:#fff9e9;border:1px solid #f4e6bd;color:#715c24;padding:13px 16px;border-radius:14px;font-size:12px;margin-top:15px}
+footer{margin-top:24px;background:#fff;border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:12px}.footer-row{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.modal-back{display:none;position:fixed;inset:0;background:#17182766;z-index:10;align-items:center;justify-content:center;padding:18px}.modal{background:white;border-radius:20px;padding:22px;width:min(420px,100%);box-shadow:var(--shadow)}.modal input,.modal textarea{width:100%;border:1px solid var(--line);border-radius:11px;padding:10px;margin:7px 0 12px}.modal textarea{min-height:100px;resize:vertical}.modal-actions{display:flex;gap:9px;justify-content:flex-end}
+@media(max-width:760px){.links{gap:11px;font-size:12px}.nav{height:64px}.nav>.btn{display:none}.hero-box{grid-template-columns:1fr}.orb{width:145px;grid-row:1}.grid{grid-template-columns:1fr}.chat-layout{grid-template-columns:1fr}.profile{grid-template-columns:75px 1fr}.avatar{width:70px;height:70px;border-radius:20px}.section-head{align-items:start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap nav">
+<a class="brand" href="#home">GORG<span>_ABAD</span></a>
+<nav class="links"><a href="#news">اخبار</a><a href="#about">معرفی</a><a href="#account">حساب کاربری</a></nav>
+<a class="btn" href="#account">ورود / ثبت‌نام</a>
+</div></header>
+<main id="home" class="wrap">
+<div class="hero"><div class="hero-box">
+<div><span class="kicker">خانه‌ی رسمی جامعه‌ی GORGAME</span><h1>به <span>GORG_ABAD</span><br>خوش اومدی!</h1>
+<p class="lead">اینجا از تازه‌ترین خبرها باخبر شو، با GORGAME آشنا شو و در فضای دوستانه با بقیه‌ی طرفدارها گفت‌وگو کن.</p>
+<div class="hero-actions"><a class="btn" href="#news">دیدن آخرین اخبار</a><a class="btn alt" href="#account">ورود / ثبت‌نام</a></div></div>
+<div class="orb" aria-label="نشان GORGAME">G</div>
+</div></div>
+<section id="news"><div class="section-head"><div><h2>آخرین اخبار</h2><p class="sub">خبرها و اطلاعیه‌های جامعه‌ی GORGAME</p></div><span class="news-tag">NEWS ROOM</span></div>
+<div class="grid" id="newsGrid">
+<article class="card"><span class="news-tag">اطلاعیه</span><h3>به GORG_ABAD خوش آمدید</h3><p>این بخش برای خبرها، برنامه‌ی استریم و اطلاعیه‌های جدید آماده شده است.</p></article>
+<article class="card"><span class="news-tag">استریم</span><h3>برنامه‌ی استریم بعدی</h3><p>زمان پخش برنامه‌ی بعدی را اینجا دنبال کنید. جزئیات به‌زودی اعلام می‌شود.</p></article>
+<article class="card"><span class="news-tag">جامعه</span><h3>گفت‌وگوی طرفدارها</h3><p>در بخش گفت‌وگو می‌توانید با نام مستعار تصادفی پیام بفرستید.</p></article>
+</div></section>
+<section id="about"><div class="section-head"><div><h2>درباره‌ی GORGAME</h2><p class="sub">کمی بیشتر با استریمر آشنا شو</p></div></div>
+<div class="card profile"><div class="avatar">GG</div><div><h3 style="margin:0 0 5px;font-size:21px">GORGAME</h3><p>به صفحه‌ی معرفی GORGAME خوش آمدید. این قسمت برای بیوگرافی کوتاه، سبک محتوا، بازی‌های محبوب و لینک شبکه‌های اجتماعی است.</p><div class="socials"><a href="#about">YouTube</a><a href="#about">Twitch</a><a href="#about">Instagram</a></div></div></div>
+</section>
+<section id="account"><div class="section-head"><div><h2>حساب کاربری</h2><p class="sub">برای ورود به جامعه‌ی GORG_ABAD ثبت‌نام کن یا وارد حساب خودت شو.</p></div><span class="news-tag">MEMBERS AREA</span></div>
+<div class="chat-layout">
+<div class="card">
+  <div class="chat-title"><h3>ثبت‌نام / ورود</h3><span class="news-tag">ACCOUNT</span></div>
+  <div style="padding:18px">
+    <div style="display:flex;gap:8px;margin-bottom:12px">
+      <button class="btn" id="showSignup" type="button">ثبت‌نام</button>
+      <button class="btn alt" id="showLogin" type="button">ورود</button>
+    </div>
+    <form id="signupForm">
+      <label for="signupName">نام کاربری</label>
+      <input id="signupName" required maxlength="24" placeholder="مثلاً gorg_fan" style="width:100%;border:1px solid var(--line);border-radius:11px;padding:10px;margin:6px 0 12px">
+      <label for="signupContact">ایمیل یا شماره موبایل</label>
+      <input id="signupContact" required placeholder="ایمیل یا شماره موبایل" style="width:100%;border:1px solid var(--line);border-radius:11px;padding:10px;margin:6px 0 12px">
+      <label for="signupPassword">رمز عبور</label>
+      <input id="signupPassword" type="password" required minlength="8" placeholder="حداقل ۸ کاراکتر" style="width:100%;border:1px solid var(--line);border-radius:11px;padding:10px;margin:6px 0 12px">
+      <button class="btn" type="submit">ساخت حساب</button>
+    </form>
+    <form id="loginForm" hidden>
+      <label for="loginContact">ایمیل یا شماره موبایل</label>
+      <input id="loginContact" required placeholder="ایمیل یا شماره موبایل" style="width:100%;border:1px solid var(--line);border-radius:11px;padding:10px;margin:6px 0 12px">
+      <label for="loginPassword">رمز عبور</label>
+      <input id="loginPassword" type="password" required placeholder="رمز عبور" style="width:100%;border:1px solid var(--line);border-radius:11px;padding:10px;margin:6px 0 12px">
+      <button class="btn" type="submit">ورود به حساب</button>
+    </form>
+    <p id="authMessage" class="sub" role="status">برای استفاده‌ی واقعی، ثبت‌نام و ورود باید به سرویس احراز هویت متصل شود.</p>
+    <div id="accountStatus" hidden class="safety"></div>
+    <button id="logoutButton" class="btn alt" type="button" hidden>خروج از حساب</button>
+  </div>
+</div>
+<div class="card">
+  <div class="chat-title"><h3>سطوح دسترسی</h3><span class="news-tag">ROLES</span></div>
+  <div style="padding:18px">
+    <p><b>کاربر عادی</b><br><span class="sub">مشاهده‌ی اخبار و شرکت در گفت‌وگو</span></p>
+    <p><b>مدیر</b><br><span class="sub">مدیریت پیام‌ها و رسیدگی به گزارش‌ها</span></p>
+    <p><b>ادمین ارشد</b><br><span class="sub">مدیریت کاربران و مدیرها</span></p>
+    <p><b>مالک سایت</b><br><span class="sub">دسترسی کامل و تعیین سطح دسترسی دیگران</span></p>
+    <div class="safety">نقش‌ها باید در سرور تعیین و بررسی شوند. کاربران نمی‌توانند با ثبت‌نام یا تغییر اطلاعات مرورگر، ادمین شوند.</div>
+  </div>
+</div>
+</div>
+<div class="section-head" style="margin-top:30px"><div><h2>گفت‌وگوی اعضا</h2><p class="sub">برای ارسال پیام باید وارد حساب کاربری شده باشی.</p></div></div>
+<div class="chat-layout">
+<div class="card chat-card"><div class="chat-title"><h3>گفت‌وگوی عمومی</h3><span class="news-tag">PUBLIC</span></div><div class="chat-body" id="publicMessages"><div class="msg"><small>GORG_ABAD BOT</small>به اتاق عمومی خوش آمدی! برای ارسال پیام وارد حساب شو.</div></div><form class="chat-compose" id="publicForm"><input id="publicInput" maxlength="300" placeholder="ابتدا وارد حساب شو..." autocomplete="off" required disabled><button class="btn" type="submit" disabled>ارسال</button></form><div class="notice">این نسخه‌ی نمایشی هنوز به سرور چت متصل نیست.</div></div>
+<div class="card chat-card"><div class="chat-title"><h3>گفت‌وگوی خصوصی</h3><span class="news-tag">PRIVATE</span></div><div class="chat-body" id="privateMessages"><div class="msg"><small>GORG_ABAD BOT</small>گفت‌وگوی خصوصی پس از اتصال سرور و ساخت فهرست کاربران فعال می‌شود.</div></div><div style="padding:12px 13px 0"><select id="privateRecipient" disabled style="width:100%;border:1px solid var(--line);border-radius:11px;padding:10px;background:#fff"><option value="">انتخاب گیرنده پیام خصوصی</option></select></div><form class="chat-compose" id="privateForm"><input id="privateInput" maxlength="1000" placeholder="ابتدا وارد حساب شو..." autocomplete="off" required disabled><button class="btn" type="submit" disabled>ارسال</button></form><div class="notice">پیام خصوصی واقعی باید با دسترسی امن و فقط برای دو طرف ذخیره شود.</div></div>
+</div>
+<div id="ownerPanel" class="card" hidden style="margin-top:18px">
+  <div class="chat-title"><h3>مدیریت کاربران</h3><span class="news-tag">OWNER PANEL</span></div>
+  <div style="padding:16px"><p class="sub">فقط مالک سایت می‌تواند نقش کاربران را تغییر دهد.</p><div id="memberList">در حال بارگذاری کاربران...</div></div>
+</div>
+<div class="safety">اطلاعات ورودت را با هیچ‌کس به اشتراک نگذار. برای امنیت، رمز عبور نباید در این نسخه‌ی نمایشی داخل مرورگر ذخیره شود.</div>
+</section>
+</main>
+<footer><div class="wrap footer-row"><span>© 2026 GORG_ABAD — ساخته‌شده برای جامعه‌ی GORGAME</span><span>با احترام گفت‌وگو کنیم 💜</span></div></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL = 'https://rgmrmojgmwmnnoukakfz.supabase.co';
+const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable__3y3msWp7yiiqWL9lowdNA_TOeVxc6k';
+const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+
+const signupForm = document.getElementById('signupForm');
+const loginForm = document.getElementById('loginForm');
+const authMessage = document.getElementById('authMessage');
+const accountStatus = document.getElementById('accountStatus');
+const logoutButton = document.getElementById('logoutButton');
+const publicForm = document.getElementById('publicForm');
+const privateForm = document.getElementById('privateForm');
+const publicInput = document.getElementById('publicInput');
+const privateInput = document.getElementById('privateInput');
+const privateRecipient = document.getElementById('privateRecipient');
+const publicMessages = document.getElementById('publicMessages');
+const privateMessages = document.getElementById('privateMessages');
+const ownerPanel = document.getElementById('ownerPanel');
+let currentUser = null;
+let currentProfile = null;
+
+document.getElementById('showSignup').addEventListener('click', () => {
+  signupForm.hidden = false; loginForm.hidden = true;
+  document.getElementById('showSignup').className = 'btn';
+  document.getElementById('showLogin').className = 'btn alt';
+});
+document.getElementById('showLogin').addEventListener('click', () => {
+  signupForm.hidden = true; loginForm.hidden = false;
+  document.getElementById('showSignup').className = 'btn alt';
+  document.getElementById('showLogin').className = 'btn';
+});
+
+function setChatEnabled(enabled) {
+  [publicInput, privateInput, privateRecipient].forEach(el => el.disabled = !enabled);
+  publicForm.querySelector('button').disabled = !enabled;
+  privateForm.querySelector('button').disabled = !enabled;
+  publicInput.placeholder = enabled ? 'پیامت رو بنویس...' : 'ابتدا وارد حساب شو...';
+  privateInput.placeholder = enabled ? 'پیام خصوصی بنویس...' : 'ابتدا وارد حساب شو...';
+}
+function addMessage(target, author, body, mine) {
+  const item = document.createElement('div');
+  item.className = 'msg' + (mine ? ' mine' : '');
+  const label = document.createElement('small');
+  label.textContent = author || 'عضو GORG_ABAD';
+  const text = document.createElement('span');
+  text.textContent = body;
+  item.append(label, text);
+  target.appendChild(item);
+}
+function showError(prefix, error) {
+  authMessage.textContent = prefix + ': ' + (error?.message || 'خطای نامشخص');
+}
+async function loadPublicMessages() {
+  publicMessages.replaceChildren();
+  const { data, error } = await db.from('public_messages')
+    .select('id,sender_id,body,created_at')
+    .order('created_at', { ascending: true }).limit(60);
+  if (error) { addMessage(publicMessages, 'سیستم', 'بارگذاری پیام‌ها ناموفق بود: ' + error.message, false); return; }
+  const ids = [...new Set((data || []).map(x => x.sender_id))];
+  let names = {};
+  if (ids.length) {
+    const { data: people } = await db.from('profiles').select('id,username').in('id', ids);
+    (people || []).forEach(p => names[p.id] = p.username);
+  }
+  (data || []).forEach(m => addMessage(publicMessages, names[m.sender_id], m.body, m.sender_id === currentUser.id));
+  publicMessages.scrollTop = publicMessages.scrollHeight;
+}
+async function loadRecipients() {
+  privateRecipient.innerHTML = '<option value="">انتخاب گیرنده پیام خصوصی</option>';
+  const { data, error } = await db.from('profiles').select('id,username').neq('id', currentUser.id).order('username');
+  if (error) { authMessage.textContent = 'بارگذاری فهرست کاربران: ' + error.message; return; }
+  (data || []).forEach(p => {
+    const option = document.createElement('option');
+    option.value = p.id; option.textContent = p.username;
+    privateRecipient.appendChild(option);
+  });
+}
+async function loadPrivateMessages() {
+  privateMessages.replaceChildren();
+  const recipient = privateRecipient.value;
+  if (!recipient) {
+    addMessage(privateMessages, 'GORG_ABAD BOT', 'برای دیدن گفت‌وگوی خصوصی، ابتدا یک کاربر انتخاب کن.', false);
+    return;
+  }
+  const { data, error } = await db.from('private_messages')
+    .select('id,sender_id,recipient_id,body,created_at')
+    .or('and(sender_id.eq.' + currentUser.id + ',recipient_id.eq.' + recipient + '),and(sender_id.eq.' + recipient + ',recipient_id.eq.' + currentUser.id + ')')
+    .order('created_at', { ascending: true }).limit(100);
+  if (error) { addMessage(privateMessages, 'سیستم', 'بارگذاری پیام خصوصی ناموفق بود: ' + error.message, false); return; }
+  const ids = [...new Set((data || []).flatMap(x => [x.sender_id, x.recipient_id]))];
+  let names = {};
+  if (ids.length) {
+    const { data: people } = await db.from('profiles').select('id,username').in('id', ids);
+    (people || []).forEach(p => names[p.id] = p.username);
+  }
+  (data || []).forEach(m => addMessage(privateMessages, names[m.sender_id], m.body, m.sender_id === currentUser.id));
+  privateMessages.scrollTop = privateMessages.scrollHeight;
+}
+async function loadOwnerPanel() {
+  if (!currentProfile || currentProfile.role !== 'owner') { ownerPanel.hidden = true; return; }
+  ownerPanel.hidden = false;
+  const list = document.getElementById('memberList');
+  list.textContent = 'در حال بارگذاری...';
+  const { data, error } = await db.from('profiles').select('id,username,role').order('created_at', { ascending: false });
+  if (error) { list.textContent = 'خطا: ' + error.message; return; }
+  list.replaceChildren();
+  (data || []).forEach(member => {
+    const row = document.createElement('div');
+    row.style.cssText = 'display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);flex-wrap:wrap';
+    const info = document.createElement('span');
+    info.textContent = member.username + ' — ' + member.role;
+    const controls = document.createElement('span');
+    if (member.role !== 'owner' && member.id !== currentUser.id) {
+      const button = document.createElement('button');
+      button.className = 'btn alt'; button.type = 'button';
+      button.textContent = member.role === 'admin' ? 'تبدیل به کاربر' : 'ارتقا به مدیر';
+      button.addEventListener('click', async () => {
+        button.disabled = true;
+        const nextRole = member.role === 'admin' ? 'user' : 'admin';
+        const { error: rpcError } = await db.rpc('set_member_role', { target_user_id: member.id, new_role: nextRole });
+        if (rpcError) { authMessage.textContent = 'تغییر نقش ناموفق بود: ' + rpcError.message; button.disabled = false; }
+        else { authMessage.textContent = 'نقش کاربر تغییر کرد.'; await loadOwnerPanel(); }
+      });
+      controls.appendChild(button);
+    }
+    row.append(info, controls); list.appendChild(row);
+  });
+}
+async function refreshSession() {
+  const { data: { session } } = await db.auth.getSession();
+  currentUser = session?.user || null;
+  if (!currentUser) {
+    currentProfile = null; accountStatus.hidden = true; logoutButton.hidden = true;
+    setChatEnabled(false); ownerPanel.hidden = true;
+    authMessage.textContent = 'برای استفاده از چت، ابتدا ثبت‌نام کن یا وارد شو.';
+    return;
+  }
+  const { data: profile, error } = await db.from('profiles').select('*').eq('id', currentUser.id).single();
+  if (error) { authMessage.textContent = 'حساب وارد شد، اما پروفایل پیدا نشد: ' + error.message; return; }
+  currentProfile = profile;
+  accountStatus.hidden = false; logoutButton.hidden = false;
+  accountStatus.textContent = 'وارد شدی: ' + profile.username + ' | سطح دسترسی: ' + profile.role;
+  authMessage.textContent = 'خوش آمدی ' + profile.username + '!';
+  setChatEnabled(true);
+  await Promise.all([loadPublicMessages(), loadRecipients(), loadOwnerPanel()]);
+  await loadPrivateMessages();
+}
+signupForm.addEventListener('submit', async e => {
+  e.preventDefault();
+  const username = document.getElementById('signupName').value.trim();
+  const contact = document.getElementById('signupContact').value.trim();
+  const password = document.getElementById('signupPassword').value;
+  if (!username || !contact || password.length < 8) return;
+  authMessage.textContent = 'در حال ساخت حساب...';
+  const isEmail = contact.includes('@');
+  const credentials = isEmail
+    ? { email: contact, password, options: { data: { username } } }
+    : { phone: contact, password, options: { data: { username } } };
+  const { data, error } = await db.auth.signUp(credentials);
+  if (error) { showError('ثبت‌نام ناموفق بود', error); return; }
+  if (!data.session) {
+    authMessage.textContent = isEmail
+      ? 'حساب ساخته شد. ایمیلت را برای تأیید باز کن؛ سپس وارد شو.'
+      : 'درخواست ثبت‌نام ارسال شد. کد پیامکی را طبق تنظیمات سرویس تأیید کن.';
+  } else {
+    authMessage.textContent = 'ثبت‌نام موفق بود.';
+    await refreshSession();
+  }
+});
+loginForm.addEventListener('submit', async e => {
+  e.preventDefault();
+  const contact = document.getElementById('loginContact').value.trim();
+  const password = document.getElementById('loginPassword').value;
+  authMessage.textContent = 'در حال ورود...';
+  const credentials = contact.includes('@')
+    ? { email: contact, password }
+    : { phone: contact, password };
+  const { error } = await db.auth.signInWithPassword(credentials);
+  if (error) { showError('ورود ناموفق بود', error); return; }
+  await refreshSession();
+});
+logoutButton.addEventListener('click', async () => {
+  const { error } = await db.auth.signOut();
+  if (error) { showError('خروج ناموفق بود', error); return; }
+  await refreshSession();
+});
+publicForm.addEventListener('submit', async e => {
+  e.preventDefault();
+  if (!currentUser) return;
+  const body = publicInput.value.trim(); if (!body) return;
+  const { error } = await db.from('public_messages').insert({ sender_id: currentUser.id, body });
+  if (error) { authMessage.textContent = 'ارسال پیام ناموفق بود: ' + error.message; return; }
+  publicInput.value = ''; await loadPublicMessages();
+});
+privateRecipient.addEventListener('change', loadPrivateMessages);
+privateForm.addEventListener('submit', async e => {
+  e.preventDefault();
+  if (!currentUser || !privateRecipient.value) { authMessage.textContent = 'ابتدا گیرنده پیام خصوصی را انتخاب کن.'; return; }
+  const body = privateInput.value.trim(); if (!body) return;
+  const { error } = await db.from('private_messages').insert({
+    sender_id: currentUser.id, recipient_id: privateRecipient.value, body
+  });
+  if (error) { authMessage.textContent = 'ارسال پیام خصوصی ناموفق بود: ' + error.message; return; }
+  privateInput.value = ''; await loadPrivateMessages();
+});
+db.auth.onAuthStateChange(() => { setTimeout(refreshSession, 0); });
+refreshSession();
+</script>
+</body></html>
